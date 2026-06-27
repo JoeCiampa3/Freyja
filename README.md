@@ -4,9 +4,11 @@
 
 Freyja is an independent, long-term engineering project: a 170 cm, 65 kg bipedal humanoid with a carbon-fiber-reinforced-polymer (CFRP) structural skeleton, designed from the ground up around the physical constraints of human-scale locomotion. The goal is not to assemble off-the-shelf modules into an approximate humanoid shape, but to derive each subsystem from the underlying mechanics — joint torque budgets from biomechanics, actuator selection from load analysis, structural geometry from impact and fatigue considerations.
 
-An emphasis is put on elegant and 
+An emphasis is put on elegance and beauty in design, complimenting and supporting functionality rather than undermining it.
 
 This repository documents the design methodology, engineering rationale, and current development state.
+
+PLEASE NOTE: both the project and this repository are very much works in progress. Many of the files are currently placeholders that will be updated as the project goes forward. 
 
 <!-- Replace with an isometric render of the pelvis/hip assembly. -->
 <!-- ![Freyja pelvis assembly](docs/img/pelvis-iso.png) -->
@@ -25,13 +27,17 @@ This is a design-first project. The work that matters most at this stage lives i
 
 The project is organized around a few principles that drive every subsystem decision:
 
-**Derive, don't guess.** Joint actuator requirements come from biomechanical torque analysis, not from picking a motor that "looks strong enough." The hip torque study ([`docs/hip-joint-analysis.md`](docs/hip-joint-analysis.md)) is representative: peak pitch and roll demands were computed independently (~120–124 Nm), and that near-symmetry is what justified the coupled ±45° diagonal actuator configuration.
+**Biomimicry:** effort has been taken to adapt the profound lessons of human evolution to modern robotics, from the closed torque box design of the pelvis to the series elastic nature of human tendons.
 
-**Separate the things that should be separate.** Load-bearing structure and actuation are treated as distinct problems. A remote cable-driven scheme on selected axes keeps actuators off the structural members that absorb ground-contact impacts, protecting drivetrain components from shock loads.
+**Derivation first** Joint actuator requirements come from biomechanical torque analysis, not from picking a motor that "looks strong enough." The hip torque study ([`docs/hip-joint-analysis.md`](docs/hip-joint-analysis.md)) is representative: peak pitch and roll demands were computed independently (~120–124 Nm), and that near-symmetry is what justified the coupled ±45° diagonal actuator configuration.
 
-**Match the controller to the task.** Compute is split across two tiers: real-time, low-level motor control runs on dedicated STM32 microcontrollers at each joint, while a higher-level compute module handles inference and coordination. Each layer runs where its latency and throughput requirements are actually met.
+**Functional Separation:** load-bearing structure and actuation are treated as distinct problems. A remote cable-driven scheme on selected axes keeps actuators off the structural members that absorb ground-contact impacts, protecting drivetrain components from shock loads.
+
+
 
 **Modularity:** components are designed with invariant interfaces and wiring hubs such that a design update in one component does not propogate downstream. Furthermore, there is effort invested in designing each subassembly to be modular as well, e.g. actuators can be updated and swapped out as required without requiring a fundamental design update.
+
+**Elegance** of design is prioritized: each component interacts synergistically with those around it, often doing double or multi duty in a design that prioritizes a holistic optimization of both volume and weight
 
 ---
 
