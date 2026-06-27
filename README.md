@@ -17,7 +17,7 @@ This repository documents the design methodology, engineering rationale, and cur
 
 **Current phase: detailed design.** The system-level architecture is settled and CAD development is underway, currently focused on the pelvis and lower-limb assemblies. The near-term engineering milestone is a validated single-leg test stand before progressing to a dual-leg walking platform.
 
-This is a design-first project. The work that matters most at this stage lives in the analysis and rationale behind each decision — see [`docs/`](docs/) — as much as in the CAD itself.
+This is a design-first project. The work that matters most at this stage lives in the analysis and rationale behind each decision ( see [`docs/`](docs/) ) as much as in the CAD itself.
 
 ---
 
