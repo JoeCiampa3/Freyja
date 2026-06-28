@@ -22,13 +22,15 @@ With actuator torques $\tau_a, \tau_b$ and joint torques $\tau_p$ (pitch), $\tau
 
 
 
-$$
+```math
+\begin{aligned}
 \begin{bmatrix} \tau_p \\ \tau_r \end{bmatrix}
-=
+&=
 \frac{1}{\sqrt{2}}
 \begin{bmatrix} 1 & -1 \\ 1 & \phantom{-}1 \end{bmatrix}
 \begin{bmatrix} \tau_a \\ \tau_b \end{bmatrix}
-$$
+\end{aligned}
+```
 
 Inverting (the matrix is orthogonal, so the inverse is its transpose) gives what each actuator actually sees:
 
