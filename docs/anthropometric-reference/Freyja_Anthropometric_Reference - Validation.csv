@@ -1,0 +1,15 @@
+Validation — target (from BSIP Reference) vs achieved (from Fusion mass properties),,,,,,,,,,,,,,,,,,,,,,
+Paste Fusion values into yellow 'ach' cells. Deviations compute. Log deliberate departures in the rightmost column.,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,Mass (kg),,,CoM x (mm),,,CoM y (mm),,,CoM z (mm),,,Ixx (kg·m²),,,Iyy (kg·m²),,,Izz (kg·m²),,,
+Segment,tgt,ach,Δ,tgt,ach,Δ,tgt,ach,Δ,tgt,ach,Δ,tgt,ach,Δ,tgt,ach,Δ,tgt,ach,Δ,Deviation log / notes
+Head & Neck,4.355,,-4.355,4.0,,-4.0,145.5,,-145.5,0.3,,-0.3,0.023,,-0.023,0.015,,-0.015,0.025,,-0.025,
+Thorax,17.095,,-17.095,6.6,,-6.6,-165.3,,165.3,0.3,,-0.3,0.255,,-0.255,0.182,,-0.182,0.205,,-0.205,
+Abdomen,2.665,,-2.665,29.5,,-29.5,-50.2,,50.2,0.6,,-0.6,0.018,,-0.018,0.023,,-0.023,0.012,,-0.012,
+Pelvis,9.490,,-9.490,-1.0,,1.0,-24.8,,24.8,0.2,,-0.2,0.090,,-0.090,0.109,,-0.109,0.068,,-0.068,"Target CoM y/x are the reference for the post-spinal-interface weighted-CoM check. Recall current blue marker ~71 mm posterior of anterior ASIS, ~57% from anterior skin — log AP deviation + control cost here."
+Upper Arm,1.430,,-1.430,-17.7,,17.7,-110.3,,110.3,-6.8,,6.8,0.009,,-0.009,0.002,,-0.002,0.009,,-0.009,
+Forearm,0.845,,-0.845,4.6,,-4.6,-122.5,,122.5,-7.0,,7.0,0.006,,-0.006,0.001,,-0.001,0.006,,-0.006,
+Hand,0.845,,-0.845,2.8,,-2.8,-118.0,,118.0,4.0,,-4.0,0.005,,-0.005,0.001,,-0.001,0.005,,-0.005,
+Thigh,7.995,,-7.995,-17.7,,17.7,-185.3,,185.3,14.3,,-14.3,0.125,,-0.125,0.034,,-0.034,0.134,,-0.134,
+Leg (shank),2.925,,-2.925,-19.0,,19.0,-156.8,,156.8,12.0,,-12.0,0.035,,-0.035,0.004,,-0.004,0.035,,-0.035,
+Foot,0.650,,-0.650,44.6,,-44.6,-36.0,,36.0,6.4,,-6.4,0.001,,-0.001,0.002,,-0.002,0.002,,-0.002,

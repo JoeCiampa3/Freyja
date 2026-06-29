@@ -1,0 +1,42 @@
+Freyja — Anthropometric Reference: Body Segment Inertial Parameters,
+,
+Purpose,"Single source of truth for segment mass, centre-of-mass, and full inertia tensor. Every CAD/control decision references these values. Normalized parameters live here once; the 170 cm / 65 kg instantiation is computed by formula so a stature or mass change propagates from one cell."
+,
+INSTANTIATION,
+Total body mass,65 kg  (set on 'BSIP Reference' B1 — blue input)
+Stature,1700 mm  (set on 'BSIP Reference' B2 — blue input)
+Population provenance,"Dumas (2007) female = adjusted from Young et al. (1983), USAF women. Young, fit cohort — NOT a population-median female. Document deviations against this, do not assume it is a median."
+,
+COORDINATE SYSTEM (ISB / Dumas segment frames),
+Axes (right-handed),"+x anterior, +y cranial (up), +z to the subject's right."
+Pelvis frame,"Origin = right hip joint centre. x = anterior, normal to the plane of the two ASIS and the PSIS midpoint. z = parallel to the inter-ASIS line, pointing right. y = up, completing the triad. Build the Fusion pelvis CSYS to match this so the CoM vector and tensor drop in with no re-rotation."
+Each segment,has its own SCS per Dumas/ISB. CoM vectors and tensors are expressed in that segment's frame — match each Fusion segment CSYS to its Dumas frame.
+Reference pose,Anatomical neutral standing. Joint angle sign conventions per ISB JCS (adopt Grood-Suntay for the knee when that row is added).
+,
+UNITS POLICY,
+Mass,kg
+Length / CoM offsets,mm (CAD-native)
+Inertia,kg·m²  (biomech/sim standard; ×1e6 → kg·mm² for Fusion if needed)
+Dumas normalized inputs,Enter EXACTLY as published: mass as fraction of body mass; CoM and radii of gyration as PERCENT of segment length (the sheet divides by 100). Entering them as published = fewest transcription transforms = fewest errors.
+,
+SOURCE COMMITMENT (locked),
+Mass / CoM / inertia tensor,Dumas (2007) female — PRIMARY. + Corrigendum 2007b for Head & Neck. + Dumas (2015) for Thorax & Abdomen. de Leva female = cross-check (limbs only — see below).
+Hip joint centre,"Harrington (2007), pelvic-dimension regression — PRIMARY. Bell (1990) = secondary cross-check."
+Knee / ankle JC,"Landmark midpoints (femoral epicondyles / malleoli), not a regression."
+Range of motion,Anatomical ceiling: Boone & Azen / AAOS. Functional target: gait/stair/sit-to-stand kinematics. Keep as two columns.
+External body dimensions,MakeHuman mesh = authoritative (envelope-first). ANSUR II female = reality-check on the mesh's driving girths/breadths.
+Segment density,"Derived sanity read-out from Fusion mass properties, not an independent target. Dempster/Winter values for eyeballing only."
+,
+KEY CAVEATS,
+Product-of-inertia sign,Sheet uses  I_ij = SIGN(r_ij)·m·(r_ij·L)²  with r_ij the signed off-diagonal radius of gyration (% of L). CONFIRM this against Dumas (2007) inertia-matrix equation before trusting the products — the sign is the single easiest term to get wrong.
+de Leva cross-check,"Clean only for limb segments. de Leva carries one trunk segment; Dumas splits Thorax/Abdomen/Pelvis. For the trunk, compare LUMPED (sum Dumas's three) — not row-by-row."
+Pelvis SEGMENT mass ≠ structural mass,"Dumas 'pelvis' is the whole biomechanical segment: bone + gluteal/pelvic soft tissue + lower viscera. The target is Freyja's ENTIRE pelvis segment (structure + battery + flesh + skin), NOT the ~8 kg structural assembly alone. Do not compare 8 kg of hardware to the Dumas segment mass directly."
+Pelvis length definition,Dumas normalizes the pelvis by its segment length = hip-JC midpoint to the lumbosacral (L5/S1) joint centre. Pin this exact endpoint from the paper before instantiating — pelvis length varies most by definition between sources.
+,
+HOW TO USE,
+1,Fill the YELLOW cells on 'BSIP Reference': segment length L (from MakeHuman/your geometry) and the Dumas normalized values (transcribe from your copy of the paper).
+2,"Targets (mass kg, CoM mm, inertia kg·m²) compute automatically."
+3,"On 'Validation', paste Fusion mass-properties into the YELLOW achieved cells; deviations compute. Log any deliberate departure from biology with magnitude + expected control cost."
+4,Check the count-weighted mass-fraction sum (≈1.000) reconstructs body mass — your transcription tripwire.
+,
+Colour key,Blue = hardcoded input   •   Black = formula   •   Green = link to another sheet   •   Yellow fill = needs your entry

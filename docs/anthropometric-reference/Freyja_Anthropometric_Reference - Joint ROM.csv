@@ -1,0 +1,33 @@
+Joint,Movement,Plane / axis,"Anatomical
+ceiling (°)","Ceiling
+source","Functional
+demand (°)","Functional source /
+task","Freyja
+target (°)","Hard
+constraint?","Headroom (°)
+(ceil − func)",Notes
+Hip,Flexion,Sagittal,133.8,"Soucie 2011 (F, 20–44)",67.0,Riener 2002 — stair ascent,,,66.8,Soucie ceiling 133.8°. Riener ascent peak ≈67° (30° stairs) up to ~73° (42°). Read off Fig 2 ±~3°. Large positive headroom — anatomy not the limiter.
+Hip,Extension,Sagittal,18.1,"Soucie 2011 (F, 20–44)",low,Riener 2002 — stair descent,,,,"Soucie ceiling 18.1°. On stairs the hip stays flexed — extension demand is small (≈0–10°), not governing. No headroom number entered (qualitative)."
+Hip,Abduction,Frontal,,,,,,,,Soucie n/a (no frontal hip). Source needed: Boone&Azen (M) / AAOS.
+Hip,Adduction,Frontal,,,,,,,,Soucie n/a. Source: Boone&Azen (M) / AAOS.
+Hip,Internal rotation,Transverse,,,,,,,,Soucie n/a (no hip rotation). Source: Boone&Azen (M) / AAOS.
+Hip,External rotation,Transverse,,,,,,,,Soucie n/a. Source: Boone&Azen (M) / AAOS.
+Knee,Flexion,Sagittal,141.9,"Soucie 2011 (F, 20–44)",95.0,Riener 2002 — stair descent,,,46.9,"Soucie ceiling 141.9°. Riener descent peak ≈95° (30°) up to ~100° (42°); ascent similar. Large positive headroom anatomically — your four-bar divergence at 120°+ is the real limiter, not human ROM."
+Knee,Extension,Sagittal,1.6,"Soucie 2011 (F, 20–44)",~0,Riener 2002 — stair descent,,,,Soucie ceiling 1.6° hyperext. Knee reaches near-full extension in stance but no hyperextension demand on stairs. Keep the 0° hard-stop. No headroom number (qualitative).
+Ankle,Dorsiflexion,Sagittal,13.8,"Soucie 2011 (F, 20–44)",18.0,Riener 2002 — stair descent,25.0,YES,-4.2,"GOVERNING. Three-way: Soucie ceiling 13.8° (F mean) < Riener descent demand ≈15° (30° stairs) to ~18–20° (42°) < your design target 25°. So stair-descent dorsiflexion ALREADY exceeds the population-MEAN ankle ceiling (headroom negative), which is why stairs need above-average ankle flexibility. Your 25° gives margin above the steepest measured stair demand and sits at ~+2 SD of the female distribution (within the human max of 36°). Design the ankle for the flexible tail, log it as a deliberate above-median departure. Plot reads ±~3°."
+Ankle,Plantarflexion,Sagittal,62.1,"Soucie 2011 (F, 20–44)",28.0,Riener 2002 — stair descent,,,34.1,Soucie ceiling 62.1°. Riener descent peak plantarflexion ≈25–30° (late stance/push-off). Large positive headroom.
+Ankle,Inversion,Frontal,,,,,,,,Soucie n/a (no ankle inv/ev). Source: Boone&Azen (M) / AAOS.
+Ankle,Eversion,Frontal,,,,,,,,Soucie n/a. Source: Boone&Azen (M) / AAOS.
+Lumbosacral,Flexion,Sagittal,,,,,,,,Soucie n/a (no spine). Source: spine ROM literature / AAOS.
+Lumbosacral,Extension,Sagittal,,,,,,,,Soucie n/a. Source: spine ROM literature / AAOS.
+Lumbosacral,Lateral bending,Frontal,,,,,,,,Soucie n/a. Source: spine ROM literature / AAOS.
+Lumbosacral,Axial rotation,Transverse,,,,,,,,Soucie n/a. Source: spine ROM literature / AAOS.
+Shoulder,Flexion,Sagittal,172.0,"Soucie 2011 (F, 20–44)",,,,,,95% CI 170.9–173.1; SD 6.8; max 183°.
+Shoulder,Extension,Sagittal,,,,,,,,Soucie n/a (only shoulder flexion). Source: AAOS / Boone&Azen (M).
+Shoulder,Abduction,Frontal,,,,,,,,Soucie n/a. Source: AAOS / Boone&Azen (M).
+Elbow,Flexion,Sagittal,150.0,"Soucie 2011 (F, 20–44)",,,,,,95% CI 149.1–150.9; SD 5.5; max 165.5°.
+Elbow,Extension,Sagittal,4.7,"Soucie 2011 (F, 20–44)",,,,,,Hyperextension beyond neutral; SD 4.8; max 18°.
+Wrist,Flexion,Sagittal,,,,,,,,Soucie n/a (no wrist). Source: Boone&Azen (M) / AAOS.
+Wrist,Extension,Sagittal,,,,,,,,Soucie n/a. Source: Boone&Azen (M) / AAOS.
+,,,,,,,,,,
+Headroom = ceiling − functional. Negative ⇒ task demands more than population-mean anatomy ⇒ Freyja must exceed human-typical ROM there.,,,,,,,,,,

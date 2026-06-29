@@ -1,0 +1,28 @@
+Freyja — Joint Definitions: Sources & Conventions,,,,
+,,,,
+FRAMEWORK COMMITMENT (locked),,,,
+JCS framework,ISB Joint Coordinate System. Anchors every joint frame + sign convention. Keeps the joint sheet coherent with the Dumas segment frames the BSIP values already live in.,,,
+Joint centres — default,"Reed et al. (1999) regressions for trunk centres (CJC, TJC, SJC, LJC). Female coefficients already completed in your Dumas (2007) appendix — pull from there, not Reed directly.",,,
+Joint centres — override,"Harrington et al. (2007) for the HJC. Better-validated, pelvic-geometry driven. Reed↔Harrington HJC offset (few mm) logged as a deviation, not silently absorbed.",,,
+Other JCs,"Knee/ankle/elbow/wrist = landmark midpoints (epicondyles, malleoli, styloids), per ISB SCS definitions — not regressions.",,,
+ROM — anatomical ceiling,"Soucie et al. (2011), female-inclusive. Boone & Azen (1979) secondary/historical (male-only — population mismatch).",,,
+ROM — functional target,"Winter (level gait, you have it); Riener et al. (2002) for stair descent/ascent; task kinematics per movement.",,,
+FRAME COHERENCE RULE,Joint frames MUST match the Dumas SCS the BSIP tensors are expressed in. A joint frame defined differently than its segment frame = every inertia number off by a transform. This is the whole reason ISB was chosen.,,,
+,,,,
+VERIFIED CITATIONS (DOIs confirmed from primary sources),,,,
+Source,Title (abbrev.),Year / venue,DOI / PMID,Used for
+Wu et al. 2002,"ISB JCS part I: ankle, hip, spine",J Biomech 35(4):543–548,10.1016/s0021-9290(01)00222-6,"Frames: hip, ankle, lumbosacral, spine"
+Wu et al. 2005,"ISB JCS part II: shoulder, elbow, wrist, hand",J Biomech 38(5):981–992,10.1016/j.jbiomech.2004.05.042,Frames: upper limb (later)
+Grood & Suntay 1983,JCS for 3D motion: knee,J Biomech Eng 105(2):136–144,10.1115/1.3138397,Frame + rotation sequence: knee
+Reed et al. 1999,Measuring/representing occupant posture,SAE 1999-01-0959,10.4271/1999-01-0959,Trunk JC method (female coeffs in Dumas appx)
+Harrington et al. 2007,Prediction of the hip joint centre (MRI),J Biomech 40(3):595–602,10.1016/j.jbiomech.2006.02.003,HJC override (primary)
+Soucie et al. 2011,ROM reference values & database,Haemophilia 17(3):500–507,10.1111/j.1365-2516.2010.02399.x,ROM anatomical ceiling (primary)
+Boone & Azen 1979,Normal ROM of joints in male subjects,JBJS Am 61(5):756–759,PMID 457719,ROM ceiling (secondary; male-only)
+Riener et al. 2002,Stair ascent/descent at different inclinations,Gait Posture 15(1):32–44,10.1016/s0966-6362(01)00162-x,ROM functional (stairs)
+,,,,
+CONVENTIONS,,,,
+Rotation sequence,"ISB Cardan/Euler per joint. Grood–Suntay floating-axis convention: e1 = flexion axis fixed in proximal segment; e3 = long axis fixed in distal segment; e2 = floating axis (e3 × e1), carries ab/adduction.",,,
+Sign conventions,"+ flexion, + adduction, + internal rotation (right side); mirror for left. State explicit per joint in the Definitions sheet — do not assume.",,,
+Reference pose,Anatomical neutral standing = all joint angles zero.,,,
+Units,"Angles in degrees. JC coordinates in mm, expressed in the PROXIMAL segment frame. ROM in degrees.",,,
+Population provenance,"Soucie = mixed-sex, ages 2–69. Boone & Azen = male only. Reed/Dumas = young adult. Harrington = mixed adults+children, MRI. Document, don't assume median.",,,
