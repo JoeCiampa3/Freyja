@@ -30,17 +30,13 @@ $$
 Inverting (the matrix is orthogonal, so the inverse is its transpose) gives what each actuator actually sees:
 
 $$
-\begin{bmatrix} \tau_a \\ \tau_b \end{bmatrix}
-=
-\frac{1}{\sqrt{2}}
-\begin{bmatrix} 1 & \phantom{-}1 \\ -1 & 1 \end{bmatrix}
-\begin{bmatrix} \tau_p \\ \tau_r \end{bmatrix}
-\qquad\Rightarrow\qquad
-\tau_a = \frac{\tau_p + \tau_r}{\sqrt{2}},\quad
-\tau_b = \frac{-\tau_p + \tau_r}{\sqrt{2}}
+\begin{bmatrix} \tau_a \\\\ \tau_b \end{bmatrix}
+= \frac{1}{\sqrt{2}}
+\begin{bmatrix} 1 & 1 \\\\ -1 & 1 \end{bmatrix}
+\begin{bmatrix} \tau_p \\\\ \tau_r \end{bmatrix}
 $$
 
-Each actuator carries a *blend* of pitch and roll demand. This single fact drives every consequence below.
+This gives $\tau_a = \frac{\tau_p + \tau_r}{\sqrt{2}}$ and $\tau_b = \frac{-\tau_p + \tau_r}{\sqrt{2}}$ — each actuator carries a *blend* of pitch and roll demand. This single fact drives every consequence below.
 
 ---
 
@@ -60,7 +56,7 @@ Each actuator is sized to meet this simultaneous-peak case, with an additional s
 
 The conservative sizing above describes the *worst case*. Normal gait does not look like the worst case.
 
-In human walking, the pitch and roll torque profiles are **phase-offset**: peak hip flexion/extension demand and peak ab/adduction demand occur at different points in the gait cycle. The actuators rarely, if ever, see both peaks at once. Because each actuator carries the *sum* $\tfrac{\tau_p + \tau_r}{\sqrt2}$, and because $\tau_p$ and $\tau_r$ are seldom both large together, the instantaneous load on each actuator is, for most of the cycle, substantially below its rating.
+In human walking, the pitch and roll torque profiles are **phase-offset**: peak hip flexion/extension demand and peak ab/adduction demand occur at different points in the gait cycle. The actuators rarely, if ever, see both peaks at once. Because each actuator carries the *sum* $\frac{\tau_p + \tau_r}{\sqrt{2}}$, and because $\tau_p$ and $\tau_r$ are seldom both large together, the instantaneous load on each actuator is, for most of the cycle, substantially below its rating.
 
 The thermal consequence is the main prize. Actuator heating scales with RMS torque, not peak torque. By distributing two phase-offset demands across two shared actuators, the coupled layout flattens the torque profile each actuator experiences — clipping the spikes that an independent, axis-aligned actuator would absorb alone. Lower RMS load means lower steady-state winding temperature, which directly extends service life and reduces thermal derating. The system spends more of its duty cycle in an efficient operating band rather than lurching between idle and peak.
 
@@ -73,14 +69,13 @@ In short: sized for a coincidence that rarely happens, but operating — most of
 The same rotation that mixes torques also mixes velocities. For a pure pitch motion ($\dot\theta_r = 0$), the kinematics give:
 
 $$
-\dot\theta_a = \frac{\dot\theta_p}{\sqrt{2}},\qquad
-\dot\theta_b = -\frac{\dot\theta_p}{\sqrt{2}}
+\dot\theta_a = \frac{\dot\theta_p}{\sqrt{2}}, \qquad \dot\theta_b = -\frac{\dot\theta_p}{\sqrt{2}}
 $$
 
 so the achievable pitch rate is
 
 $$
-\dot\theta_{p,\text{max}} = \sqrt{2}\,\dot\theta_{a,\text{max}}.
+\dot\theta_{p,\text{max}} = \sqrt{2}\,\dot\theta_{a,\text{max}}
 $$
 
 Both actuators contribute to pitch motion, and the diagonal geometry amplifies their combined output speed by **√2** relative to a single actuator.
@@ -126,4 +121,3 @@ The coupled ±45° configuration trades control simplicity for a meaningfully be
 ---
 
 *Specifications reflect current design targets and will be refined as first-order multibody validation (MuJoCo/OpenSim) is brought online.*
-
