@@ -22,15 +22,15 @@ Design philosophy is literature-primary: every quantity is committed to a named 
 | `*.csv` (one per sheet) | Flat exports for in-browser viewing and diffing on GitHub. **Static snapshots — see note below.** |
 | `README.md` | This file. |
 
-### ⚠️ Note on the CSV files
+### Note on the CSV files
 
 GitHub does not render `.xlsx` natively in the file browser, so each sheet is also exported as a `.csv` for viewing and version-diffing online.
 
-**The CSVs are static snapshots, not live copies.** They contain the computed values *as of export time* and do **not** recompute. The `.xlsx` is the only canonical artifact:
+**The CSVs are static snapshots, not live copies.** They contain the computed values *as of export time* and do **not** recompute. The `.xlsx` is the only canonical artifact. 
 
-- Make all edits in the `.xlsx`. Treat the CSVs as read-only views.
-- After changing any input in the `.xlsx` (body mass, stature, a segment length, a transcribed source value), **regenerate the CSVs** or they will silently drift out of sync with the workbook.
-- Formulas, cell comments, colour-coding (input vs computed vs cross-sheet link), and the conditional flags do not survive the CSV export — they exist only in the `.xlsx`.
+ Formulas, cell comments, colour-coding (input vs computed vs cross-sheet link), and the conditional flags do not survive the CSV export — they exist only in the `.xlsx`. 
+
+ 
 
 ---
 
